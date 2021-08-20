@@ -1,0 +1,21 @@
+.edit-profile__btn {
+  color:white;
+  background-color:black;
+  border:none;
+  border-radius:2px;
+  margin:0;
+  padding:0;
+  transition:opacity 1s linear;
+  padding-top:16.075px;
+  padding-bottom:16.075px;
+}
+.edit-profile__btn:hover {
+  opacity:0.8;
+  cursor:pointer;
+}
+@media screen and (max-width:500px) {
+  .edit-profile__btn {
+    padding-top:14px;
+  padding-bottom:14px;
+  }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pages/styles.css">
+  <title>project 4</title>
+</head>
+
+<body class="body">
+  <div class="page">
+    <header class="header">
+      <img src="./images/logo.svg" alt="logo" class="logo">
+    </header>
+    <main class="main">
+      <section class="profile">
+        <div class="profile__info">
+          <img src="./images/profile-image.jpg" alt="profile-image" class="profile__image">
+          <div class="profile__details">
+            <h1 class="profile__title">
+              <span class="profile__name">Jacques Cousteau</span>
+              <button class="profile__edit-btn">
+                <img src="./images/edit.svg" alt="edit-image" class="profile__edit-image">
+              </button>
+            </h1>
+            <p class="profile__subtitle">Explorer</p>
+          </div>
+        </div>
+        <button type="button" class="profile__add-button">
+          <img src="./images/plus.svg" alt="plus-image" class="profile__plus-image">
+        </button>
+      </section>
+      <section class="edit-profile">
+        <div class="edit-profile__popup">
+          <button type="button" class="edit-profile__close-btn">
+            <img src="./images/plus.svg" alt="plus-icon" class="edit-profile__close-icon">
+          </button>
+          <form action="#" class="edit-profile__form">
+            <div class="edit-profile__form-content">
+              <h2 class="edit-profile__title">Edit Profile</h2>
+              <div class="div edit-profile__input-fields">
+                <input type="text" name="name" value="Jacques Cousteau" class="edit-profile__name" required>
+                <input type="text" name="about" value="Explorer" class="edit-profile__about" required>
+              </div>
+              <input type="submit" value="Save" class="edit-profile__btn">
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="places">
+        <figure class="places__place">
+          <img src="./images/yosemite.jpg" alt="yosemite-valley" class="places__image">
+          <figcaption class="places__caption">
+            <h2 class="places__title">Yosemite Valley</h2>
+            <div class="hearts">
+              <img src="./images/white-heart.svg" alt="white-heart" class="hearts__white-heart">
+              <img src="./images/black-heart.svg" alt="black-heart" class="hearts__black-heart ">
+            </div>
+          </figcaption>
+        </figure>
+        <figure class="places__place">
+          <img src="./images/louise.jpg" alt="lake-louise" class="places__image">
+          <figcaption class="places__caption">
+            <h2 class="places__title">Lake Louise</h2>
+            <div class="hearts">
+              <img src="./images/white-heart.svg" alt="white-heart" class="hearts__white-heart">
+              <img src="./images/black-heart.svg" alt="black-heart" class="hearts__black-heart ">
+            </div>
+          </figcaption>
+        </figure>
+        <figure class="places__place">
+          <img src="./images/BaldMountains.jpg" alt="bold-mountains" class="places__image">
+          <figcaption class="places__caption">
+            <h2 class="places__title">Bald Mountains</h2>
+            <div class="hearts">
+              <img src="./images/white-heart.svg" alt="white-heart" class="hearts__white-heart">
+              <img src="./images/black-heart.svg" alt="black-heart" class="hearts__black-heart ">
+            </div>
+          </figcaption>
+        </figure>
+        <figure class="places__place">
+          <img src="./images/latemar.jpg" alt="latemar" class="places__image">
+          <figcaption class="places__caption">
+            <h2 class="places__title">Latemar</h2>
+            <div class="hearts">
+              <img src="./images/white-heart.svg" alt="white-heart" class="hearts__white-heart">
+              <img src="./images/black-heart.svg" alt="black-heart" class="hearts__black-heart ">
+            </div>
+          </figcaption>
+        </figure>
+        <figure class="places__place">
+          <img src="./images/vanoise.jpg" alt="" class="places__image">
+          <figcaption class="places__caption">
+            <h2 class="places__title"> Vanoise National Park</h2>
+            <div class="hearts">
+              <img src="./images/white-heart.svg" alt="white-heart" class="hearts__white-heart">
+              <img src="./images/black-heart.svg" alt="black-heart" class="hearts__black-heart ">
+            </div>
+          </figcaption>
+        </figure>
+        <figure class="places__place">
+          <img src="./images/lago.jpg" alt="lago-di-braies" class="places__image">
+          <figcaption class="places__caption">
+            <h2 class="places__title">lago di Braies</h2>
+            <div class="hearts">
+              <img src="./images/white-heart.svg" alt="white-heart" class="hearts__white-heart">
+              <img src="./images/black-heart.svg" alt="black-heart" class="hearts__black-heart ">
+            </div>
+          </figcaption>
+        </figure>
+      </section>
+    </main>
+    <footer class="footer">
+      &copy; 2021 Around The US
+    </footer>
+  </div>
+  <script src="./app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+@import url(../vendors/normalize.css);
+@import url(../vendors/fonts/fonts.css);
+@import url(../blocks/edit-profile/edit-profile.css);
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/header/header.css);
+@import url(../blocks/hearts/hearts.css);
+@import url(../blocks/logo/logo.css);
+@import url(../blocks/page/page.css);
+@import url(../blocks/places/places.css);
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/main/main.css);
+@import url(../blocks/body/body.css);
+
+/* ELEMENTS */
+  /* edit-profile */
+@import url(../blocks/edit-profile/__about/edit-profile__about.css);
+@import url(../blocks/edit-profile/__btn/edit-profile__btn.css);
+@import url(../blocks/edit-profile/__form/edit-profile__form.css);
+@import url(../blocks/edit-profile/__form-content/edit-profile__form-content.css);
+@import url(../blocks/edit-profile/__name/edit-profile__name.css);
+@import url(../blocks/edit-profile/__title/edit-profile__title.css);
+@import url(../blocks/edit-profile/__input-fields/edit-profile__input-fields.css);
+@import url(../blocks/edit-profile/__popup/edit-profile__popup.css);
+@import url(../blocks/edit-profile/__close-btn/edit-profile__close-btn.css);
+@import url(../blocks/edit-profile/__close-icon/edit-profile__close-icon.css);
+  /* places */
+@import url(../blocks/places/__caption/places__caption.css);
+@import url(../blocks/places/__image/places__image.css);
+@import url(../blocks/places/__place/places__place.css);
+@import url(../blocks/places/__title/places__title.css);
+  /* profile */
+@import url(../blocks/profile/__add-button/profile__add-button.css);
+@import url(../blocks/profile/__details/profile__details.css);
+@import url(../blocks/profile/__edit-image/profile__edit-image.css);
+@import url(../blocks/profile/__edit-btn/profile__edit-btn.css);
+@import url(../blocks/profile/__image/profile__image.css);
+@import url(../blocks/profile/__info/profile__info.css);
+@import url(../blocks/profile/__subtitle/profile__subtitle.css);
+@import url(../blocks/profile/__title/profile__title.css);
+@import url(../blocks/profile/__plus-image/profile__plus-image.css);
+@import url(../blocks/profile/__name/profile__name.css);
+
+  /* hearts */
+@import url(../blocks/hearts/__black-heart/hearts__black-heart.css);
+@import url(../blocks/hearts/__white-heart/hearts__white-heart.css);
