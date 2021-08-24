@@ -44,3 +44,6 @@
   /* hearts */
 @import url(../blocks/hearts/__black-heart/hearts__black-heart.css);
 @import url(../blocks/hearts/__white-heart/hearts__white-heart.css);
+@import url(../blocks/hearts/__btn/hrarts__btn.css);
+/* Modifiers */
+@import url(../blocks/edit-profile/_open/edit-profile_open.css)

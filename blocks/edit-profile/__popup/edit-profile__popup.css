@@ -6,13 +6,5 @@
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  position:fixed;
-  bottom:195px;
-  top:195px;
   margin:auto;
-}
-@media screen and (max-width:500px) {
-  .edit-profile__popup {
-    top:123px;
-  }
 }

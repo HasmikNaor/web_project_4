@@ -15,48 +15,45 @@ saveBtn.addEventListener('click', saveBtnHandler);
 places.addEventListener('click', placesHandler);
 
 function editBtnHandler(e) {
-  editProfile.style.display = "flex";
+  editProfile.classList.add("edit-profile_open");
   e.preventDefault();
 }
 function closeBtnHandler(e) {
-  editProfile.style.display = "none";
+  editProfile.classList.remove("edit-profile_open");
   e.preventDefault();
 }
 
 function saveBtnHandler(e) {
   profileName.textContent = editName.value;
   profileSubtitle.textContent = editAbout.value;
-  editProfile.style.display = "none";
-  console.log(profileSubtitle);
-  console.log(profileName);
-  console.log("saveBtn called")
+  editProfile.classList.remove("edit-profile_open");
   e.preventDefault();
 }
-function placesHandler(e) {
-  let childrenLength = e.target.parentElement.children.length;
-  let parent = e.target.parentElement;
+// function placesHandler(e) {
+//   let childrenLength = e.target.parentElement.children.length;
+//   let parent = e.target.parentElement;
 
-  if (e.target.classList.contains("hearts__white-heart")) {
-    e.target.style.display = "none";
-    for (let i = 0; i < childrenLength; i++) {
-      if (parent.children[i].classList.contains("hearts__black-heart")) {
-        parent.children[i].style.display = "block";
+//   if (e.target.classList.contains("hearts__white-heart")) {
+//     e.target.style.display = "none";
+//     for (let i = 0; i < childrenLength; i++) {
+//       if (parent.children[i].classList.contains("hearts__black-heart")) {
+//         parent.children[i].style.display = "block";
 
-      }
-    }
-  }
-  if (e.target.classList.contains("hearts__black-heart")) {
-    e.target.style.display = "none";
-    for (let i = 0; i < childrenLength; i++) {
-      if (parent.children[i].classList.contains("hearts__white-heart")) {
-        parent.children[i].style.display = "block";
-      }
-    }
+//       }
+//     }
+//   }
+//   if (e.target.classList.contains("hearts__black-heart")) {
+//     e.target.style.display = "none";
+//     for (let i = 0; i < childrenLength; i++) {
+//       if (parent.children[i].classList.contains("hearts__white-heart")) {
+//         parent.children[i].style.display = "block";
+//       }
+//     }
 
-  }
+//   }
 
-  e.preventDefault();
-}
+//   e.preventDefault();
+// }
 
 
 
