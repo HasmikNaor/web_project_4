@@ -8,42 +8,28 @@ let profileSubtitle = document.querySelector(".profile__subtitle");
 let formContent = document.querySelector(".edit-profile__form-content");
 // let places = document.querySelector(".places");
 
-// function editBtnHandler(e) {
-//   editProfile.classList.add("edit-profile_open");
-//   e.preventDefault();
-// }
-// function closeBtnHandler(e) {
-//   editProfile.classList.remove("edit-profile_open");
-//   e.preventDefault();
-// }
+function editBtnHandler(e) {
+  editProfile.classList.add("edit-profile_open");
+  e.preventDefault();
+}
+function closeBtnHandler(e) {
+  editProfile.classList.remove("edit-profile_open");
+  e.preventDefault();
+}
 
-// function saveBtnHandler(e) {
-//   profileName.textContent = editName.value;
-//   profileSubtitle.textContent = editAbout.value;
-//   editProfile.classList.remove("edit-profile_open");
-//   e.preventDefault();
-// }
+function saveBtnHandler(e) {
+  profileName.textContent = editName.value;
+  profileSubtitle.textContent = editAbout.value;
+  editProfile.classList.remove("edit-profile_open");
+  e.preventDefault();
+}
 
 editBtn.addEventListener('click', editBtnHandler);
 closeBtn.addEventListener('click', closeBtnHandler);
 formContent.addEventListener('submit', saveBtnHandler);
 // places.addEventListener('click', placesHandler);
 
-function editBtnHandler() {
-  editProfile.classList.add("edit-profile_open");
-}
-function closeBtnHandler() {
-  editProfile.classList.remove("edit-profile_open");
 
-}
-
-function saveBtnHandler(e) {
-  profileName.textContent = editName.value;
-  console.log("saveBtnHandler")
-  profileSubtitle.textContent = editAbout.value;
-  editProfile.classList.remove("edit-profile_open");
-  e.preventDefault();
-}
 // function placesHandler(e) {
 //   let childrenLength = e.target.parentElement.children.length;
 //   let parent = e.target.parentElement;
