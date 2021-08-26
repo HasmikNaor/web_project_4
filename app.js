@@ -1,30 +1,45 @@
 let editBtn = document.querySelector(".profile__edit-btn");
 let editProfile = document.querySelector(".edit-profile");
 let closeBtn = document.querySelector(".edit-profile__close-btn");
-let editName = document.querySelector(".edit-profile__name");
-let editAbout = document.querySelector(".edit-profile__about");
+let editName = document.querySelector(".edit-profile__input_enter_name");
+let editAbout = document.querySelector(".edit-profile__input_enter_about");
 let profileName = document.querySelector(".profile__name");
 let profileSubtitle = document.querySelector(".profile__subtitle");
-let saveBtn = document.querySelector(".edit-profile__btn");
-let places = document.querySelector(".places");
+let formContent = document.querySelector(".edit-profile__form-content");
+// let places = document.querySelector(".places");
 
+// function editBtnHandler(e) {
+//   editProfile.classList.add("edit-profile_open");
+//   e.preventDefault();
+// }
+// function closeBtnHandler(e) {
+//   editProfile.classList.remove("edit-profile_open");
+//   e.preventDefault();
+// }
+
+// function saveBtnHandler(e) {
+//   profileName.textContent = editName.value;
+//   profileSubtitle.textContent = editAbout.value;
+//   editProfile.classList.remove("edit-profile_open");
+//   e.preventDefault();
+// }
 
 editBtn.addEventListener('click', editBtnHandler);
 closeBtn.addEventListener('click', closeBtnHandler);
-saveBtn.addEventListener('click', saveBtnHandler);
-places.addEventListener('click', placesHandler);
+formContent.addEventListener('submit', saveBtnHandler);
+// places.addEventListener('click', placesHandler);
 
-function editBtnHandler(e) {
+function editBtnHandler() {
   editProfile.classList.add("edit-profile_open");
-  e.preventDefault();
 }
-function closeBtnHandler(e) {
+function closeBtnHandler() {
   editProfile.classList.remove("edit-profile_open");
-  e.preventDefault();
+
 }
 
 function saveBtnHandler(e) {
   profileName.textContent = editName.value;
+  console.log("saveBtnHandler")
   profileSubtitle.textContent = editAbout.value;
   editProfile.classList.remove("edit-profile_open");
   e.preventDefault();

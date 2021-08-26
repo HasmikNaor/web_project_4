@@ -1,6 +1,7 @@
 .edit-profile__title {
   color:black;
   margin:0;
+  margin-bottom:54px;
   font-weight:900;
   font-size:24px;
   line-height:29.05px;
@@ -9,6 +10,6 @@
   .edit-profile__title {
     font-size:18px;
     line-height:21.78px;
-    
+    margin-bottom:76px;
   }
 }

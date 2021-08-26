@@ -1,8 +1,0 @@
-.hearts__white-heart {
-  display:block;
-}
-
-.hearts__white-heart:hover {
-  cursor:pointer;
-  opacity:0.5;
-}

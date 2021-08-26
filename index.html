@@ -19,12 +19,12 @@
         <div class="profile__info">
           <img src="./images/profile-image.jpg" alt="profile-image" class="profile__image">
           <div class="profile__details">
-            <h1 class="profile__title">
-              <span class="profile__name">Jacques Cousteau</span>
-              <button class="profile__edit-btn">
+            <div class="profile__title">
+              <h1 class="profile__name">Jacques Cousteau</h1>
+              <button class="profile__edit-btn" type="button">
                 <img src="./images/edit.svg" alt="edit-image" class="profile__edit-image">
               </button>
-            </h1>
+            </div>
             <p class="profile__subtitle">Explorer</p>
           </div>
         </div>
@@ -32,116 +32,102 @@
           <img src="./images/plus.svg" alt="plus-image" class="profile__plus-image">
         </button>
       </section>
-      <section class="edit-profile">
+      <div class="edit-profile">
         <div class="edit-profile__popup">
           <button type="button" class="edit-profile__close-btn">
             <img src="./images/plus.svg" alt="plus-icon" class="edit-profile__close-icon">
           </button>
-          <form action="#" class="edit-profile__form">
-            <div class="edit-profile__form-content">
+          <div class="edit-profile__form">
+            <form class="edit-profile__form-content" name="profile">
               <h2 class="edit-profile__title">Edit Profile</h2>
-              <div class="div edit-profile__input-fields">
-                <input type="text" name="name" value="Jacques Cousteau" class="edit-profile__name" required>
-                <input type="text" name="about" value="Explorer" class="edit-profile__about" required>
-              </div>
-              <input type="submit" value="Save" class="edit-profile__btn">
-            </div>
-          </form>
+              <input type="text" name="name" placeholder="Jacques Cousteau"
+                class="edit-profile__input edit-profile__input_enter_name" value="" required>
+              <input type="text" name="about" placeholder="Explorer"
+                class="edit-profile__input edit-profile__input_enter_about" value="" required>
+              <button type="submit" class="edit-profile__btn">Save</button>
+            </form>
+          </div>
         </div>
-      </section>
-
+      </div>
       <section class="places">
         <figure class="places__place">
           <img src="./images/yosemite.jpg" alt="yosemite-valley" class="places__image">
           <figcaption class="places__caption">
             <h2 class="places__title">Yosemite Valley</h2>
-            <div class="hearts">
-              <button type="button" class="hearts__btn">
-                <img src="./images/white-heart.svg" alt="white-heart" class="hearts__white-heart">
-              </button>
-              <button type="button" class="hearts__btn">
-                <img src="./images/black-heart.svg" alt="black-heart" class="hearts__black-heart ">
-              </button>
-            </div>
+            <button type="button" class=" places__btn">
+              <img src="./images/white-heart.svg" alt="white-heart" class="hearts__white-heart">
+            </button>
+            <!-- <button type="button" class=" places__btn">
+              <img src="./images/black-heart.svg" alt="black-heart" class="hearts__black-heart ">
+            </button> -->
           </figcaption>
         </figure>
         <figure class="places__place">
           <img src="./images/louise.jpg" alt="lake-louise" class="places__image">
           <figcaption class="places__caption">
             <h2 class="places__title">Lake Louise</h2>
-            <div class="hearts">
-              <button type="button" class="hearts__btn">
-                <img src="./images/white-heart.svg" alt="white-heart" class="hearts__white-heart">
-              </button>
-              <button type="button" class="hearts__btn">
-                <img src="./images/black-heart.svg" alt="black-heart" class="hearts__black-heart ">
-              </button>
-            </div>
+            <button type="button" class=" places__btn">
+              <img src="./images/white-heart.svg" alt="white-heart" class="hearts__white-heart">
+            </button>
+            <!-- <button type="button" class=" places__btn">
+              <img src="./images/black-heart.svg" alt="black-heart" class="hearts__black-heart ">
+            </button> -->
           </figcaption>
         </figure>
         <figure class="places__place">
           <img src="./images/BaldMountains.jpg" alt="bold-mountains" class="places__image">
           <figcaption class="places__caption">
             <h2 class="places__title">Bald Mountains</h2>
-            <div class="hearts">
-              <button type="button" class="hearts__btn">
-                <img src="./images/white-heart.svg" alt="white-heart" class="hearts__white-heart">
-              </button>
-              <button type="button" class="hearts__btn">
-                <img src="./images/black-heart.svg" alt="black-heart" class="hearts__black-heart ">
-              </button>
-            </div>
+            <button type="button" class=" places__btn">
+              <img src="./images/white-heart.svg" alt="white-heart" class="hearts__white-heart">
+            </button>
+            <!-- <button type="button" class=" places__btn">
+              <img src="./images/black-heart.svg" alt="black-heart" class="hearts__black-heart ">
+            </button> -->
           </figcaption>
         </figure>
         <figure class="places__place">
           <img src="./images/latemar.jpg" alt="latemar" class="places__image">
           <figcaption class="places__caption">
             <h2 class="places__title">Latemar</h2>
-            <div class="hearts">
-              <button type="button" class="hearts__btn">
-                <img src="./images/white-heart.svg" alt="white-heart" class="hearts__white-heart">
-              </button>
-              <button type="button" class="hearts__btn">
-                <img src="./images/black-heart.svg" alt="black-heart" class="hearts__black-heart ">
-              </button>
-            </div>
+            <button type="button" class=" places__btn">
+              <img src="./images/white-heart.svg" alt="white-heart" class="hearts__white-heart">
+            </button>
+            <!-- <button type="button" class=" places__btn">
+              <img src="./images/black-heart.svg" alt="black-heart" class="hearts__black-heart ">
+            </button> -->
           </figcaption>
         </figure>
         <figure class="places__place">
           <img src="./images/vanoise.jpg" alt="vanoise" class="places__image">
           <figcaption class="places__caption">
             <h2 class="places__title"> Vanoise National Park</h2>
-            <div class="hearts">
-              <button type="button" class="hearts__btn">
-                <img src="./images/white-heart.svg" alt="white-heart" class="hearts__white-heart">
-              </button>
-              <button type="button" class="hearts__btn">
-                <img src="./images/black-heart.svg" alt="black-heart" class="hearts__black-heart ">
-              </button>
-            </div>
+            <button type="button" class=" places__btn">
+              <img src="./images/white-heart.svg" alt="white-heart" class="hearts__white-heart">
+            </button>
+            <!-- <button type="button" class=" places__btn">
+              <img src="./images/black-heart.svg" alt="black-heart" class="hearts__black-heart ">
+            </button> -->
           </figcaption>
         </figure>
         <figure class="places__place">
           <img src="./images/lago.jpg" alt="lago-di-braies" class="places__image">
           <figcaption class="places__caption">
             <h2 class="places__title">lago di Braies</h2>
-            <div class="hearts">
-              <button type="button" class="hearts__btn">
-                <img src="./images/white-heart.svg" alt="white-heart" class="hearts__white-heart">
-              </button>
-              <button type="button" class="hearts__btn">
-                <img src="./images/black-heart.svg" alt="black-heart" class="hearts__black-heart ">
-              </button>
-            </div>
+            <button type="button" class=" places__btn">
+              <img src="./images/white-heart.svg" alt="white-heart" class="hearts__white-heart">
+            </button>
+            <!-- <button type="button" class=" places__btn">
+              <img src="./images/black-heart.svg" alt="black-heart" class="hearts__black-heart ">
+            </button> -->
           </figcaption>
         </figure>
       </section>
     </main>
     <footer class="footer">
-      &copy; 2021 Around The US
+      <p class="footer__content">&copy; 2021 Around The US</p>
     </footer>
-  </div>
-  <script src="./app.js"></script>
+    <script src="./app.js"></script>
 </body>
 
 </html>

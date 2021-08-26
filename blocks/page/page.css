@@ -10,7 +10,7 @@
   align-items:center;
   position:relative;
   box-sizing:border-box;
-  font-family:'inter', 'sans-serif';
+  font-family:'inter', Arial, sans-serif;
 }
 @media screen and (max-width:500px) {
   .page {

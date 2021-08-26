@@ -4,18 +4,26 @@
   border:none;
   border-radius:2px;
   margin:0;
+  margin-top:48px;
   padding:0;
   transition:opacity 1s linear;
-  padding-top:16.075px;
-  padding-bottom:16.075px;
+  padding-top:14.5px;
+  padding-bottom:14.5px;
+  font-size:18px;
+  line-height:21.78px;
+  font-weight:400;
 }
 .edit-profile__btn:hover {
   opacity:0.8;
   cursor:pointer;
 }
+
 @media screen and (max-width:500px) {
   .edit-profile__btn {
-    padding-top:14px;
-  padding-bottom:14px;
+      padding-top:15px;
+      padding-bottom:15px;
+      font-size:14px;
+      line-height:16.94px;
+      margin-top:46px;
   }
 }

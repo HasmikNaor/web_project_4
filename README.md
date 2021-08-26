@@ -1,5 +1,7 @@
 # Project 4: Around The U.S.
-
+* in this project you can edit the profile of the user:it contains a hidden form that after clicking on edit-button , a popup window appears.you can change the profile through it.
+* I have used Css HTML and JS.
+* [link to the project in GitHub] ( https://hasmiknaor.github.io/web_project_4/)
 ### Overview
 
 * Figma

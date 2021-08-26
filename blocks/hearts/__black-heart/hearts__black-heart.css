@@ -1,8 +1,0 @@
-.hearts__black-heart {
-  transition:opacity 1s linear;
-  display:none;
-}
-.hearts__black-heart:hover {
-  cursor:pointer;
-  opacity:0.5;
-}
