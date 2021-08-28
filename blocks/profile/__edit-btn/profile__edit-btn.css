@@ -1,7 +1,7 @@
 .profile__edit-btn {
   margin-left:18px;
   box-sizing:border-box;
-  background-color:black;
+  background-color:transparent;
   display:flex;
   border:1px solid white;
   padding:6px;

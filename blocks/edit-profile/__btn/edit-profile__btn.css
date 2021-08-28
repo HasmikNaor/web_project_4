@@ -4,13 +4,13 @@
   border:none;
   border-radius:2px;
   margin:0;
-  margin-top:48px;
+  margin-top:18px;
   padding:0;
   transition:opacity 1s linear;
-  padding-top:14.5px;
-  padding-bottom:14.5px;
+  padding-top:14px;
+  padding-bottom:14px;
   font-size:18px;
-  line-height:21.78px;
+  line-height:22px;
   font-weight:400;
 }
 .edit-profile__btn:hover {
@@ -24,6 +24,6 @@
       padding-bottom:15px;
       font-size:14px;
       line-height:16.94px;
-      margin-top:46px;
+      margin-top:16px;
   }
 }

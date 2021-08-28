@@ -8,22 +8,20 @@ let profileSubtitle = document.querySelector(".profile__subtitle");
 let formContent = document.querySelector(".edit-profile__form-content");
 // let places = document.querySelector(".places");
 
-function editBtnHandler(e) {
+function editBtnHandler() {
   editProfile.classList.add("edit-profile_open");
-  e.preventDefault();
+  editName.value = profileName.textContent;
+  editAbout.value = profileSubtitle.textContent;
 }
-function closeBtnHandler(e) {
+function closeBtnHandler() {
   editProfile.classList.remove("edit-profile_open");
-  e.preventDefault();
 }
-
 function saveBtnHandler(e) {
   profileName.textContent = editName.value;
   profileSubtitle.textContent = editAbout.value;
   editProfile.classList.remove("edit-profile_open");
   e.preventDefault();
 }
-
 editBtn.addEventListener('click', editBtnHandler);
 closeBtn.addEventListener('click', closeBtnHandler);
 formContent.addEventListener('submit', saveBtnHandler);
