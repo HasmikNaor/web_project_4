@@ -49,86 +49,57 @@
           </div>
         </div>
       </div>
-      <section class="places">
-        <figure class="places__place">
-          <img src="./images/yosemite.jpg" alt="yosemite-valley" class="places__image">
-          <figcaption class="places__caption">
-            <h2 class="places__title">Yosemite Valley</h2>
-            <button type="button" class=" places__btn">
-              <img src="./images/white-heart.svg" alt="white-heart" class="places__like">
-            </button>
-            <!-- <button type="button" class=" places__btn">
-              <img src="./images/black-heart.svg" alt="black-heart" class="hearts__black-heart ">
-            </button> -->
-          </figcaption>
-        </figure>
-        <figure class="places__place">
-          <img src="./images/louise.jpg" alt="lake-louise" class="places__image">
-          <figcaption class="places__caption">
-            <h2 class="places__title">Lake Louise</h2>
-            <button type="button" class=" places__btn">
-              <img src="./images/white-heart.svg" alt="white-heart" class="places__like">
-            </button>
-            <!-- <button type="button" class=" places__btn">
-              <img src="./images/black-heart.svg" alt="black-heart" class="hearts__black-heart ">
-            </button> -->
-          </figcaption>
-        </figure>
-        <figure class="places__place">
-          <img src="./images/BaldMountains.jpg" alt="bold-mountains" class="places__image">
-          <figcaption class="places__caption">
-            <h2 class="places__title">Bald Mountains</h2>
-            <button type="button" class=" places__btn">
-              <img src="./images/white-heart.svg" alt="white-heart" class="places__like">
-            </button>
-            <!-- <button type="button" class=" places__btn">
-              <img src="./images/black-heart.svg" alt="black-heart" class="hearts__black-heart ">
-            </button> -->
-          </figcaption>
-        </figure>
-        <figure class="places__place">
-          <img src="./images/latemar.jpg" alt="latemar" class="places__image">
-          <figcaption class="places__caption">
-            <h2 class="places__title">Latemar</h2>
-            <button type="button" class=" places__btn">
-              <img src="./images/white-heart.svg" alt="white-heart" class="places__like">
-            </button>
-            <!-- <button type="button" class=" places__btn">
-              <img src="./images/black-heart.svg" alt="black-heart" class="hearts__black-heart ">
-            </button> -->
-          </figcaption>
-        </figure>
-        <figure class="places__place">
-          <img src="./images/vanoise.jpg" alt="vanoise" class="places__image">
-          <figcaption class="places__caption">
-            <h2 class="places__title"> Vanoise National Park</h2>
-            <button type="button" class=" places__btn">
-              <img src="./images/white-heart.svg" alt="white-heart" class="places__like">
-            </button>
-            <!-- <button type="button" class=" places__btn">
-              <img src="./images/black-heart.svg" alt="black-heart" class="hearts__black-heart ">
-            </button> -->
-          </figcaption>
-        </figure>
-        <figure class="places__place">
-          <img src="./images/lago.jpg" alt="lago-di-braies" class="places__image">
-          <figcaption class="places__caption">
-            <h2 class="places__title">lago di Braies</h2>
-            <button type="button" class=" places__btn">
-              <img src="./images/white-heart.svg" alt="white-heart" class="places__like">
-            </button>
-            <!-- <button type="button" class=" places__btn">
-              <img src="./images/black-heart.svg" alt="black-heart" class="hearts__black-heart ">
-            </button> -->
-          </figcaption>
-        </figure>
-      </section>
+      <section class="places"></section>
     </main>
     <footer class="footer">
       <p class="footer__content">&copy; 2021 Around The US</p>
     </footer>
+    <div class="add-new-place">
+      <div class="add-new-place__content">
+        <button class="add-new-place__close-btn">
+          <img src="./images/plus.svg" alt="close-btn" class="add-new-place__close-btn-img">
+        </button>
+        <form class="add-new-place__form">
+          <h2 class="add-new-place__title">New Place</h2>
+          <input type="text" class="add-new-place__input add-new-place__input_enter_title" value="" placeholder="Title"
+            required>
+          <input type="text" class="add-new-place__input add-new-place__input_enter_url" value=""
+            placeholder="Image url" required>
+          <button type="submit" class="add-new-place__save-btn">Save</button>
+        </form>
+      </div>
+    </div>
   </div>
-  <script src="./app.js"></script>
+  <template id="place-template">
+    <figure class="places__place">
+      <button type="button" class="trash-btn">
+        <img src="images/trash.svg" alt="trash" class="trash-img">
+      </button>
+      <img src="" alt="" class="places__image">
+      <figcaption class="places__caption">
+        <h2 class="places__title"></h2>
+        <button type="button" class=" places__btn places__btn_active">
+          <img src="./images/white-heart.svg" alt="white-heart" class="places__like">
+        </button>
+        <button type="button" class=" places__btn ">
+          <img src="./images/black-heart.svg" alt="black-heart" class=" places__like">
+        </button>
+      </figcaption>
+    </figure>
+  </template>
+  <template id="img-popup">
+    <div class="img-popup">
+      <figure class="img-popup__figure">
+        <button class="img-popup__close-btn">
+          <img src="images/plus.svg" alt="close-image" class="img-popup__close-img">
+        </button>
+        <img src="" alt="" class="img-popup__image">
+        <figcaption class="img-popup__caption"></figcaption>
+      </figure>
+    </div>
+  </template>
+  <script src="scripts/initial-cards.js"></script>
+  <script src="./scripts/app.js"></script>
 </body>
 
 </html>

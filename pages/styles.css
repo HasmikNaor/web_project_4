@@ -9,8 +9,27 @@
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/main/main.css);
 @import url(../blocks/body/body.css);
+@import url(../blocks/add-new-place/add-new-place.css);
+@import url(../blocks/remove/remove.css);
+@import url(../blocks/img-popup/img-popup.css);
 
 /* ELEMENTS */
+/* img-popup */
+@import url(../blocks/img-popup/__caption/img-popup__caption.css);
+@import url(../blocks/img-popup/__close-btn/img-popup__close-btn.css);
+@import url(../blocks/img-popup/__close-img/img-popup__close-img.css);
+@import url(../blocks/img-popup/__content/img-popup__content.css);
+@import url(../blocks/img-popup/__image/img-popup__image.css);
+@import url(../blocks/img-popup/__figure/img-popup__figure.css);
+
+  /* add-new-place */
+  @import url(../blocks/add-new-place/__close-btn-img/add-new-place__close-btn-img.css);
+  @import url(../blocks/add-new-place/__close-btn/add-new-place__close-btn.css);
+  @import url(../blocks/add-new-place/__content/add-new-place__content.css);
+  @import url(../blocks/add-new-place/__form/add-new-place__form.css);
+  @import url(../blocks/add-new-place/__input/add-new-place__input.css);
+  @import url(../blocks/add-new-place/__save-btn/add-new-place__save-btn.css);
+  @import url(../blocks/add-new-place/__title/add-new-place__title.css);
   /* edit-profile */
 @import url(../blocks/edit-profile/__btn/edit-profile__btn.css);
 @import url(../blocks/edit-profile/__form/edit-profile__form.css);
@@ -27,6 +46,7 @@
 @import url(../blocks/places/__title/places__title.css);
 @import url(../blocks/places/__btn/places__btn.css);
 @import url(../blocks/places/__like/places__like.css);
+@import url(../blocks/places/__trash-btn/places__trash-btn.css);
   /* profile */
 @import url(../blocks/profile/__add-button/profile__add-button.css);
 @import url(../blocks/profile/__details/profile__details.css);
@@ -41,6 +61,13 @@
 /* footer */
 @import url(../blocks/footer/__content/footer__content.css);
 /* Modifiers */
+  /* edit-profile */
 @import url(../blocks/edit-profile/_open/edit-profile_open.css);
 @import url(../blocks/edit-profile/__input/_enter/edit-profile__input_enter_about.css);
-@import url(../blocks/edit-profile/__input/_enter/edit-profile__input_enter_name.css)
+@import url(../blocks/edit-profile/__input/_enter/edit-profile__input_enter_name.css);
+  /* add-new-place */
+  @import url(../blocks/add-new-place/__input/_enter/add-new-place__input_enter_title.css);
+  @import url(../blocks/add-new-place/__input/_enter/add-new-place__input_enter_url.css);
+  @import url(../blocks/add-new-place/_open/add-new-place_open.css);
+    /* places */
+    @import url(../blocks/places/__btn/_active/places__btn_active.css);

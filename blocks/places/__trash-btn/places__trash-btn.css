@@ -1,10 +1,12 @@
-.places__btn {
+.trash-btn {
+  position:absolute;
+  right:15px;
+  top:18px;
   border:none;
   background-color:transparent;
-  display:none;
   transition:opacity linear 0.5s;
 }
-.places__btn:hover {
+.trash-btn:hover {
   cursor:pointer;
   opacity:0.6;
 }
