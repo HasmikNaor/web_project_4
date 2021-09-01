@@ -32,7 +32,7 @@
           <img src="./images/plus.svg" alt="plus-image" class="profile__plus-image">
         </button>
       </section>
-      <div class="edit-profile">
+      <div class="edit-profile popup">
         <div class="edit-profile__popup">
           <button type="button" class="edit-profile__close-btn">
             <img src="./images/plus.svg" alt="plus-icon" class="edit-profile__close-icon">
@@ -40,9 +40,9 @@
           <div class="edit-profile__form">
             <form class="edit-profile__form-content" name="profile">
               <h2 class="edit-profile__title">Edit Profile</h2>
-              <input type="text" name="name" placeholder="Jacques Cousteau"
+              <input type="text" name="name" placeholder="Name"
                 class="edit-profile__input edit-profile__input_enter_name" value="" required>
-              <input type="text" name="about" placeholder="Explorer"
+              <input type="text" name="about" placeholder="Profession"
                 class="edit-profile__input edit-profile__input_enter_about" value="" required>
               <button type="submit" class="edit-profile__btn">Save</button>
             </form>
@@ -54,7 +54,7 @@
     <footer class="footer">
       <p class="footer__content">&copy; 2021 Around The US</p>
     </footer>
-    <div class="add-new-place">
+    <div class="add-new-place popup">
       <div class="add-new-place__content">
         <button class="add-new-place__close-btn">
           <img src="./images/plus.svg" alt="close-btn" class="add-new-place__close-btn-img">
@@ -88,7 +88,7 @@
     </figure>
   </template>
   <template id="img-popup">
-    <div class="img-popup">
+    <div class="img-popup popup">
       <figure class="img-popup__figure">
         <button class="img-popup__close-btn">
           <img src="images/plus.svg" alt="close-image" class="img-popup__close-img">
@@ -98,6 +98,7 @@
       </figure>
     </div>
   </template>
+  <script src="scripts/selectors.js"></script>
   <script src="scripts/initial-cards.js"></script>
   <script src="./scripts/app.js"></script>
 </body>

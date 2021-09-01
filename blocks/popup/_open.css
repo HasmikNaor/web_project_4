@@ -1,6 +1,6 @@
-.edit-profile_open {
-  display:flex;
+.popup_open {
   animation:open 0.5s;
+  visibility:visible;
 }
 @keyframes open {
   from {opacity:0;}

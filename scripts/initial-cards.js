@@ -24,17 +24,22 @@ const initialCards = [
     link: "https://code.s3.yandex.net/web-code/lago.jpg"
   }
 ];
-const places = document.querySelector(".places");
-const placeTemplate = document.querySelector("#place-template").content;
-let placeElement = placeTemplate.querySelector('.places__place')
-let placesImg;
-let placesTitle;
-for (let card of initialCards) {
+
+function createCard(cardName, cardLink) {
   placeElement = placeTemplate.cloneNode(true);
   placesImg = placeElement.querySelector('.places__image');
   placesTitle = placeElement.querySelector('.places__title');
-  placesImg.src = card.link;
-  placesImg.alt = card.name;
-  placesTitle.textContent = card.name;
+  placesImg.src = cardLink;
+  placesImg.alt = cardName;
+  placesTitle.textContent = cardName;
   places.append(placeElement);
+  return placeElement
 }
+
+function insertCard(cards) {
+  for (let card of cards) {
+    places.append(createCard(card.name, card.link));
+  }
+}
+
+insertCard(initialCards);

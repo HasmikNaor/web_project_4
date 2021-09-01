@@ -12,8 +12,12 @@
 @import url(../blocks/add-new-place/add-new-place.css);
 @import url(../blocks/remove/remove.css);
 @import url(../blocks/img-popup/img-popup.css);
-
+@import url(../blocks/popup/popup.css);
 /* ELEMENTS */
+/* popup */
+@import url(../blocks/popup/_close.css);
+@import url(../blocks/popup/_open.css);
+
 /* img-popup */
 @import url(../blocks/img-popup/__caption/img-popup__caption.css);
 @import url(../blocks/img-popup/__close-btn/img-popup__close-btn.css);
