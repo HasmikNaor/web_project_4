@@ -1,8 +1,0 @@
-.add-new-place_open {
-  display:flex;
-  animation:open 0.5s;
-}
-@keyframes open {
-  from {opacity:0;}
-    to {opacity:1;}
-}

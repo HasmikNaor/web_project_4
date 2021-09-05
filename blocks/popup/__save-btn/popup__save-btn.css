@@ -1,4 +1,4 @@
-.edit-profile__btn {
+.popup__save-btn {
   color:white;
   background-color:black;
   border:none;
@@ -13,13 +13,13 @@
   line-height:22px;
   font-weight:400;
 }
-.edit-profile__btn:hover {
+.popup__save-btn:hover {
   opacity:0.8;
   cursor:pointer;
 }
 
 @media screen and (max-width:500px) {
-  .edit-profile__btn {
+  .popup__save-btn {
       padding-top:15px;
       padding-bottom:15px;
       font-size:14px;

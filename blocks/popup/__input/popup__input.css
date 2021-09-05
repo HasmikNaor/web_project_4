@@ -1,4 +1,4 @@
-.edit-profile__input {
+.popup__input {
   border:none;
   width:100%;
   height:27px;
@@ -13,7 +13,7 @@
 }
 
 @media screen and (max-width:500px) {
-  .edit-profile__input {
+  .popup__input {
     height:26px;
   }
 }

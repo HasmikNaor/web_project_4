@@ -1,4 +1,4 @@
-.add-new-place__form {
+.popup__form {
   width:100%;
   max-width:430px;
   display:flex;
@@ -12,7 +12,7 @@
   margin-right:20px;
 }
 @media screen and (max-width: 500px) {
-  .add-new-place__form {
+  .popup__form {
       padding:25px 22px;
       max-width:282px;  
   }

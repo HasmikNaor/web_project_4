@@ -1,5 +1,5 @@
-.edit-profile__popup {
-  max-width:490px;
+.popup__content {
+  max-width:500px;
   width:100%;
   display:flex;
   flex-direction:column;

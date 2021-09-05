@@ -1,4 +1,4 @@
-.add-new-place__close-btn {
+.popup__close-btn {
   align-self:flex-end;
   padding:0;
   border:none;
@@ -7,12 +7,12 @@
   transition:opacity 1s linear;
   display:flex;
 }
-.add-new-place__close-btn:hover {
+.popup__close-btn:hover {
   cursor:pointer;
   opacity:0.6;
 }
 @media screen and (max-width:500px) {
-  .add-new-place__close-btn {
+  .popup__close-btn {
     width:26px;
     height:26px;
     margin-right:19px;
