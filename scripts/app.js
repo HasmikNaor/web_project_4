@@ -13,16 +13,11 @@ const addNewPlace = document.querySelector(".popup_add-new-place");
 const addNewPlaceForm = document.querySelector('.popup__form_add-new-place');
 const addNewPlaceSaveBtn = document.querySelector('.popup__save-btn_add-new-place');
 const addNewPlaceCloseBtn = document.querySelector('.popup__close-btn_add-new-place');
-const imgPopup = document.querySelector('#img-popup').content;
-// const imgPopupElement = imgPopup.querySelector('.img-popup');
-// const closeImgPopup = imgPopupElement.querySelector('.img-popup__close-btn');
 const page = document.querySelector('.page');
-// const img = imgPopupElement.querySelector('.img-popup__image');
-// const caption = imgPopupElement.querySelector('.img-popup__caption');
-const imgPopupElement = imgPopup.querySelector('.img-popup');
-const closeImgPopup = imgPopupElement.querySelector('.img-popup__close-btn');
-// const img = imgPopupElement.querySelector('.img-popup__image');
-// const caption = imgPopupElement.querySelector('.img-popup__caption');
+const imgPopupElement = document.querySelector('.popup_image');
+const closeImgPopup = imgPopupElement.querySelector('.popup__close-btn');
+const img = imgPopupElement.querySelector('.popup__image');
+const caption = imgPopupElement.querySelector('.popup__caption');
 const places = document.querySelector(".places");
 const placeTemplate = document.querySelector("#place-template").content;
 
@@ -46,13 +41,9 @@ function saveEditProfileBtnHandler(e) {
   e.preventDefault();
 }
 function imgPopupHandler(e) {
-  const img = imgPopupElement.querySelector('.img-popup__image');
-  const caption = imgPopupElement.querySelector('.img-popup__caption');
   img.src = e.target.src;
   img.alt = e.target.alt;
   caption.textContent = e.target.alt;
-  page.append(imgPopupElement);
-  imgPopupElement.classList.add('popup')
   openPopup(imgPopupElement);
 }
 function createCard(cardName, cardLink) {
@@ -70,6 +61,7 @@ function createCard(cardName, cardLink) {
   })
 
   placeImg.addEventListener('click', imgPopupHandler)
+
   likeImgs[0].addEventListener('click', () => {
     toggleLikeBtn(likeBtns[0]);
     toggleLikeBtn(likeBtns[1]);
@@ -83,7 +75,6 @@ function createCard(cardName, cardLink) {
   function toggleLikeBtn(element) {
     element.classList.toggle('places__btn_active');
   }
-  // console.log(placeElement)
   places.prepend(placeElement);
   reset(inputCardTitle, inputCardUrl);
 
@@ -99,12 +90,10 @@ editBtn.addEventListener('click', () => {
   inputName.value = profileName.textContent;
   inputAbout.value = profileSubtitle.textContent;
   openPopup(editProfile);
-  console.log(editProfile.classList);
 });
 editProfileCloseBtn.addEventListener('click', () => closePopup(editProfile));
 editProfileForm.addEventListener('submit', saveEditProfileBtnHandler);
 addNewPlaceBtn.addEventListener('click', () => openPopup(addNewPlace));
 addNewPlaceForm.addEventListener('submit', savePlaceHandler);
 addNewPlaceCloseBtn.addEventListener('click', () => closePopup(addNewPlace));
-// places.addEventListener('click', imgPopupHandler);
 closeImgPopup.addEventListener('click', () => closePopup(imgPopupElement));
