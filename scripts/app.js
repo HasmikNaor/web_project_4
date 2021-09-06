@@ -21,10 +21,13 @@ const caption = imgPopupElement.querySelector('.popup__caption');
 const places = document.querySelector(".places");
 const placeTemplate = document.querySelector("#place-template").content;
 
-initialCards.forEach((card) => places.prepend(createCard(card.name, card.link)));
+initialCards.forEach((card) => addNewCard(createCard(card.name, card.link)));
 
-function togglePopup(popup) {
-  popup.classList.toggle("popup_open");
+function openPopup(popup) {
+  popup.classList.add("popup_open");
+}
+function closePopup(popup) {
+  popup.classList.remove("popup_open");
 }
 
 function reset(title, url) {
@@ -35,14 +38,14 @@ function reset(title, url) {
 function saveEditProfileBtnHandler(e) {
   profileName.textContent = inputName.value;
   profileSubtitle.textContent = inputAbout.value;
-  togglePopup(editProfile);
+  closePopup(editProfile);
   e.preventDefault();
 }
 function imgPopupHandler(e) {
   img.src = e.target.src;
   img.alt = e.target.alt;
   caption.textContent = e.target.alt;
-  togglePopup(imgPopupElement);
+  openPopup(imgPopupElement);
 }
 function createCard(cardName, cardLink) {
   const placeElement = placeTemplate.querySelector('.places__place').cloneNode(true);
@@ -65,20 +68,25 @@ function createCard(cardName, cardLink) {
   return placeElement;
 }
 
+function addNewCard(element) {
+  places.prepend(element);
+}
+
 function savePlaceHandler(e) {
-  places.prepend(createCard(inputCardTitle.value, inputCardUrl.value));
+  addNewCard(createCard(inputCardTitle.value, inputCardUrl.value));
   reset(inputCardTitle, inputCardUrl);
+  closePopup(addNewPlace);
   e.preventDefault();
 }
 
 editBtn.addEventListener('click', () => {
   inputName.value = profileName.textContent;
   inputAbout.value = profileSubtitle.textContent;
-  togglePopup(editProfile);
+  openPopup(editProfile);
 });
-editProfileCloseBtn.addEventListener('click', () => togglePopup(editProfile));
+editProfileCloseBtn.addEventListener('click', () => closePopup(editProfile));
 editProfileForm.addEventListener('submit', saveEditProfileBtnHandler);
-addNewPlaceBtn.addEventListener('click', () => togglePopup(addNewPlace));
+addNewPlaceBtn.addEventListener('click', () => openPopup(addNewPlace));
 addNewPlaceForm.addEventListener('submit', savePlaceHandler);
-addNewPlaceCloseBtn.addEventListener('click', () => togglePopup(addNewPlace));
-closeImgPopup.addEventListener('click', () => togglePopup(imgPopupElement));
+addNewPlaceCloseBtn.addEventListener('click', () => closePopup(addNewPlace));
+closeImgPopup.addEventListener('click', () => closePopup(imgPopupElement));
