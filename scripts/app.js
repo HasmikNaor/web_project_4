@@ -21,14 +21,12 @@ const caption = imgPopupElement.querySelector('.popup__caption');
 const places = document.querySelector(".places");
 const placeTemplate = document.querySelector("#place-template").content;
 
-initialCards.forEach((card) => createCard(card.name, card.link));
+initialCards.forEach((card) => places.prepend(createCard(card.name, card.link)));
 
-function openPopup(popup) {
-  popup.classList.add("popup_open");
+function togglePopup(popup) {
+  popup.classList.toggle("popup_open");
 }
-function closePopup(popup) {
-  popup.classList.remove("popup_open");
-}
+
 function reset(title, url) {
   title.value = "";
   url.value = "";
@@ -37,22 +35,21 @@ function reset(title, url) {
 function saveEditProfileBtnHandler(e) {
   profileName.textContent = inputName.value;
   profileSubtitle.textContent = inputAbout.value;
-  closePopup(editProfile);
+  togglePopup(editProfile);
   e.preventDefault();
 }
 function imgPopupHandler(e) {
   img.src = e.target.src;
   img.alt = e.target.alt;
   caption.textContent = e.target.alt;
-  openPopup(imgPopupElement);
+  togglePopup(imgPopupElement);
 }
 function createCard(cardName, cardLink) {
   const placeElement = placeTemplate.querySelector('.places__place').cloneNode(true);
   const placeImg = placeElement.querySelector('.places__image');
   const placeTitle = placeElement.querySelector('.places__title');
   const deletePlace = placeElement.querySelector('.trash-btn');
-  const likeImgs = placeElement.querySelectorAll('.places__like');
-  const likeBtns = placeElement.querySelectorAll('.places__btn');
+  const likeBtn = placeElement.querySelector('.places__btn');
   placeImg.alt = cardName;
   placeImg.src = cardLink;
   placeTitle.textContent = cardName;
@@ -62,38 +59,26 @@ function createCard(cardName, cardLink) {
 
   placeImg.addEventListener('click', imgPopupHandler)
 
-  likeImgs[0].addEventListener('click', () => {
-    toggleLikeBtn(likeBtns[0]);
-    toggleLikeBtn(likeBtns[1]);
+  likeBtn.addEventListener('click', () => {
+    likeBtn.classList.toggle('places__btn_active');
   })
-
-  likeImgs[1].addEventListener('click', () => {
-    toggleLikeBtn(likeBtns[0]);
-    toggleLikeBtn(likeBtns[1]);
-  })
-
-  function toggleLikeBtn(element) {
-    element.classList.toggle('places__btn_active');
-  }
-  places.prepend(placeElement);
-  reset(inputCardTitle, inputCardUrl);
-
-  closePopup(addNewPlace);
+  return placeElement;
 }
+
 function savePlaceHandler(e) {
-  createCard(inputCardTitle.value, inputCardUrl.value);
-  closePopup(addNewPlace);
+  places.prepend(createCard(inputCardTitle.value, inputCardUrl.value));
+  reset(inputCardTitle, inputCardUrl);
   e.preventDefault();
 }
 
 editBtn.addEventListener('click', () => {
   inputName.value = profileName.textContent;
   inputAbout.value = profileSubtitle.textContent;
-  openPopup(editProfile);
+  togglePopup(editProfile);
 });
-editProfileCloseBtn.addEventListener('click', () => closePopup(editProfile));
+editProfileCloseBtn.addEventListener('click', () => togglePopup(editProfile));
 editProfileForm.addEventListener('submit', saveEditProfileBtnHandler);
-addNewPlaceBtn.addEventListener('click', () => openPopup(addNewPlace));
+addNewPlaceBtn.addEventListener('click', () => togglePopup(addNewPlace));
 addNewPlaceForm.addEventListener('submit', savePlaceHandler);
-addNewPlaceCloseBtn.addEventListener('click', () => closePopup(addNewPlace));
-closeImgPopup.addEventListener('click', () => closePopup(imgPopupElement));
+addNewPlaceCloseBtn.addEventListener('click', () => togglePopup(addNewPlace));
+closeImgPopup.addEventListener('click', () => togglePopup(imgPopupElement));
