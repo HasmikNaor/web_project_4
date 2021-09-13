@@ -23,12 +23,40 @@ const placeTemplate = document.querySelector("#place-template").content;
 
 initialCards.forEach((card) => addNewCard(createCard(card.name, card.link)));
 
+function clickOnOverlayHundler(e) {
+  const classes = e.target.classList;
+  const popup = document.querySelector('.popup_open');
+  if (classes.contains('popup')) {
+    closePopup(popup);
+  }
+}
+
+function keydownEventHandler(e) {
+  const popup = document.querySelector('.popup_open');
+  if (e.key === "Escape")
+    closePopup(popup);
+}
+
 function openPopup(popup) {
   popup.classList.add("popup_open");
+
+  document.addEventListener('click', clickOnOverlayHundler);
+
+  document.addEventListener("keydown", keydownEventHandler);
 }
+
 function closePopup(popup) {
   popup.classList.remove("popup_open");
+
+  document.removeEventListener('click', clickOnOverlayHundler);
+
+  document.removeEventListener("keydown", keydownEventHandler);
+
+  const inputs = [...popup.querySelectorAll('.popup__input')];
+  const inputErrorClass = { inputErrorClass: "popup__input_theme_error" }
+  inputs.forEach(input => hideError(input, inputErrorClass));
 }
+
 
 function reset(title, url) {
   title.value = "";

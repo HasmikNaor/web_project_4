@@ -9,7 +9,8 @@
   padding-bottom:13px;
   background-color:transparent;
   box-sizing:border-box;
-  margin-bottom:30px;
+  margin-top:13px;
+  margin-bottom:5px;
 }
 
 @media screen and (max-width:500px) {

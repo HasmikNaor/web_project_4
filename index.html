@@ -44,8 +44,12 @@
         </button>
         <form class="popup__form popup__form_add-new-place">
           <h2 class="popup__title popup__title_theme_add-new-place">New Place</h2>
-          <input type="text" class="popup__input popup__input_new-place_title" value="" placeholder="Title" required>
-          <input type="text" class="popup__input popup__input_new-place_url" value="" placeholder="Image url" required>
+          <input id="card-name-input" type="text" class="popup__input popup__input_new-place_title" value=""
+            placeholder="Title" required minlength="1" maxlength="30">
+          <span id="card-name-input-error" class="popup__error"></span>
+          <input id="card-link-input" type="url" class="popup__input popup__input_new-place_url" value=""
+            placeholder="Image url" required>
+          <span id="card-link-input-error" class="popup__error"></span>
           <button type="submit" class="popup__save-btn popup__save-btn_add-new-place">Save</button>
         </form>
       </div>
@@ -57,9 +61,12 @@
         </button>
         <form class="popup__form popup__form_edit-profile">
           <h2 class="popup__title popup__title_theme_edit-profile">Edit Profile</h2>
-          <input type="text" class="popup__input popup__input_edit-profile_name" value="" placeholder="Name" required>
-          <input type="text" class="popup__input popup__input_edit-profile_about" value="" placeholder="Proffesion"
-            required>
+          <input id="name-input" type="text" class="popup__input popup__input_edit-profile_name" value=""
+            placeholder="Name" required minlength="2" maxlength="40">
+          <span id="name-input-error" class="popup__error"></span>
+          <input id="job-input" type="text" class="popup__input popup__input_edit-profile_about" value=""
+            placeholder="Proffesion" required minlength="2" maxlength="200">
+          <span id="job-input-error" class="popup__error"></span>
           <button type="submit" class="popup__save-btn popup__save-btn_edit-profile">Save</button>
         </form>
       </div>
@@ -69,7 +76,7 @@
         <button class="popup__close-btn">
           <img src="images/plus.svg" alt="close-image" class="popup__close-btn-img">
         </button>
-        <img alt="" class="popup__image">
+        <img alt="" class="popup__image" src="">
         <figcaption class="popup__caption"></figcaption>
       </figure>
     </div>
@@ -78,7 +85,7 @@
         <button type="button" class="trash-btn">
           <img src="images/trash.svg" alt="trash" class="trash-img">
         </button>
-        <img alt="" class="places__image">
+        <img alt="" class="places__image" src="">
         <figcaption class="places__caption">
           <h2 class="places__title"></h2>
           <button type="button" class=" places__btn "></button>
@@ -88,6 +95,7 @@
   </div>
   <script src="./scripts/initial-cards.js"></script>
   <script src="./scripts/app.js"></script>
+  <script src="./scripts/validate.js"></script>
 </body>
 
 </html>
