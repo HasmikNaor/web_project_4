@@ -25,16 +25,17 @@ initialCards.forEach((card) => addNewCard(createCard(card.name, card.link)));
 
 function clickOnOverlayHundler(e) {
   const classes = e.target.classList;
-  const popup = document.querySelector('.popup_open');
+  const popup = e.target;
   if (classes.contains('popup')) {
     closePopup(popup);
   }
 }
 
 function keydownEventHandler(e) {
-  const popup = document.querySelector('.popup_open');
-  if (e.key === "Escape")
+  if (e.key === "Escape") {
+    const popup = document.querySelector('.popup_open');
     closePopup(popup);
+  }
 }
 
 function openPopup(popup) {
@@ -52,15 +53,6 @@ function closePopup(popup) {
 
   document.removeEventListener("keydown", keydownEventHandler);
 
-  const inputs = [...popup.querySelectorAll('.popup__input')];
-  const inputErrorClass = { inputErrorClass: "popup__input_theme_error" }
-  inputs.forEach(input => hideError(input, inputErrorClass));
-}
-
-
-function reset(title, url) {
-  title.value = "";
-  url.value = "";
 }
 
 function saveEditProfileBtnHandler(e) {
@@ -102,7 +94,7 @@ function addNewCard(element) {
 
 function savePlaceHandler(e) {
   addNewCard(createCard(inputCardTitle.value, inputCardUrl.value));
-  reset(inputCardTitle, inputCardUrl);
+  addNewPlaceForm.reset();
   closePopup(addNewPlace);
   e.preventDefault();
 }
@@ -110,11 +102,30 @@ function savePlaceHandler(e) {
 editBtn.addEventListener('click', () => {
   inputName.value = profileName.textContent;
   inputAbout.value = profileSubtitle.textContent;
+
+  const settings = {
+    inputErrorClass: "popup__input_theme_error",
+    inactiveButtonClass: "popup__save-btn_disabled"
+  }
+  const inputs = [...editProfile.querySelectorAll('.popup__input')];
+  const button = editProfile.querySelector('.popup__save-btn')
+  inputs.forEach(input => hideError(input, settings));
+  toggleButtonState(inputs, button, settings);
   openPopup(editProfile);
 });
 editProfileCloseBtn.addEventListener('click', () => closePopup(editProfile));
 editProfileForm.addEventListener('submit', saveEditProfileBtnHandler);
-addNewPlaceBtn.addEventListener('click', () => openPopup(addNewPlace));
+addNewPlaceBtn.addEventListener('click', () => {
+  const settings = {
+    inputErrorClass: "popup__input_theme_error",
+    inactiveButtonClass: "popup__save-btn_disabled"
+  }
+  const inputs = [...addNewPlace.querySelectorAll('.popup__input')];
+  const button = addNewPlace.querySelector('.popup__save-btn');
+  toggleButtonState(inputs, button, settings);
+  inputs.forEach(input => hideError(input, settings));
+  openPopup(addNewPlace)
+});
 addNewPlaceForm.addEventListener('submit', savePlaceHandler);
 addNewPlaceCloseBtn.addEventListener('click', () => closePopup(addNewPlace));
 closeImgPopup.addEventListener('click', () => closePopup(imgPopupElement));

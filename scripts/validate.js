@@ -30,22 +30,26 @@ function toggleButtonState(inputs, button, settings) {
     button.classList.add(settings.inactiveButtonClass);
   }
 }
+
+function setEventListeners(form, settings) {
+  const inputs = [...form.querySelectorAll(settings.inputSelector)];
+  const button = form.querySelector(settings.submitButtonSelector);
+  inputs.forEach(input => {
+    input.addEventListener('input', () => {
+      checkValidity(input, settings)
+      toggleButtonState(inputs, button, settings);
+    })
+  })
+}
+
 function enableValidation(settings) {
   const forms = [...document.querySelectorAll(settings.formSelector)];
   forms.forEach(form => {
     form.addEventListener('submit', (e) => e.preventDefault());
-
-    const inputs = [...form.querySelectorAll(settings.inputSelector)];
-    const button = form.querySelector(settings.submitButtonSelector);
-
-    inputs.forEach(input => {
-      input.addEventListener('input', () => {
-        checkValidity(input, settings)
-        toggleButtonState(inputs, button, settings);
-      })
-    })
+    setEventListeners(form, settings);
   })
 }
+
 const config = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
