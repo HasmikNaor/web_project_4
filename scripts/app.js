@@ -36,6 +36,8 @@ const addNewPlaceCloseBtn = document.querySelector('.popup__close-btn_add-new-pl
 const imgPopupElement = document.querySelector('.popup_image');
 const closeImgPopup = imgPopupElement.querySelector('.popup__close-btn');
 const places = document.querySelector(".places");
+const editProfileInputs = [...editProfile.querySelectorAll('.popup__input')];
+const addNewPlaceInputs = [...addNewPlace.querySelectorAll('.popup__input')];
 
 initialCards.forEach(card => addNewCard(card));
 
@@ -48,10 +50,13 @@ function saveEditProfileBtnHandler(e) {
   e.preventDefault();
 }
 
-function addNewCard(element) {
+function createCard(element) {
   const newCard = new Card(element, '#place-template');
-  newCard.getCardElement()
-  places.prepend(newCard.getCardElement());
+  return newCard.getCardElement();
+}
+
+function addNewCard(element) {
+  places.prepend(createCard(element));
 }
 
 function savePlaceHandler(e) {
@@ -70,8 +75,7 @@ editBtn.addEventListener('click', () => {
   inputName.value = profileName.textContent;
   inputAbout.value = profileSubtitle.textContent;
 
-  const inputs = [...editProfile.querySelectorAll('.popup__input')];
-  inputs.forEach(input => {
+  editProfileInputs.forEach(input => {
     editFormValidator.hideError(input);
   });
 
@@ -82,14 +86,8 @@ editProfileCloseBtn.addEventListener('click', () => closePopup(editProfile));
 editProfileForm.addEventListener('submit', saveEditProfileBtnHandler);
 addNewPlaceForm.addEventListener('submit', savePlaceHandler);
 addNewPlaceBtn.addEventListener('click', () => {
-  const settings = {
-    inputErrorClass: "popup__input_theme_error",
-    inactiveButtonClass: "popup__save-btn_disabled"
-  }
-  const inputs = [...addNewPlace.querySelectorAll('.popup__input')];
-  const button = addNewPlace.querySelector('.popup__save-btn');
   addCardFormValidator.toggleButtonState();
-  inputs.forEach(input => addCardFormValidator.hideError(input, settings));
+  addNewPlaceInputs.forEach(input => addCardFormValidator.hideError(input));
   openPopup(addNewPlace)
 });
 
