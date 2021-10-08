@@ -12,24 +12,24 @@
 <body class="body">
   <div class="page">
     <header class="header">
-      <img src="./images/logo.svg" alt="logo" class="logo">
+      <img src="<%=require('./images/logo.svg')%>" alt="logo" class="logo">
     </header>
     <main class="main">
       <section class="profile">
         <div class="profile__info">
-          <img src="./images/profile-image.jpg" alt="profile-image" class="profile__image">
+          <img src="<%=require('./images/profile-image.jpg')%>" alt="profile-image" class="profile__image">
           <div class="profile__details">
             <div class="profile__title">
               <h1 class="profile__name">Jacques Cousteau</h1>
               <button class="profile__edit-btn" type="button">
-                <img src="./images/edit.svg" alt="edit-image" class="profile__edit-image">
+                <img src="<%=require('./images/edit.svg')%>" alt="edit-image" class="profile__edit-image">
               </button>
             </div>
             <p class="profile__subtitle">Explorer</p>
           </div>
         </div>
         <button type="button" class="profile__add-button">
-          <img src="./images/plus.svg" alt="plus-image" class="profile__plus-image">
+          <img src="<%=require('./images/plus.svg')%>" alt="plus-image" class="profile__plus-image">
         </button>
       </section>
       <section class="places"></section>
@@ -40,15 +40,15 @@
     <div class="popup popup_add-new-place">
       <div class="popup__content">
         <button class="popup__close-btn popup__close-btn_add-new-place">
-          <img src="./images/plus.svg" alt="close-btn" class="popup__close-btn-img">
+          <img src="<%=require('./images/plus.svg')%>" alt="close-btn" class="popup__close-btn-img">
         </button>
         <form class="popup__form popup__form_add-new-place">
           <h2 class="popup__title popup__title_theme_add-new-place">New Place</h2>
           <input id="card-name-input" type="text" class="popup__input popup__input_new-place_title" value=""
-            placeholder="Title" required minlength="1" maxlength="30">
+            placeholder="Title" required minlength="1" maxlength="30" name="name">
           <span id="card-name-input-error" class="popup__error"></span>
           <input id="card-link-input" type="url" class="popup__input popup__input_new-place_url" value=""
-            placeholder="Image url" required>
+            placeholder="Image url" required name="link">
           <span id="card-link-input-error" class="popup__error"></span>
           <button type="submit" class="popup__save-btn popup__save-btn_add-new-place">Save</button>
         </form>
@@ -57,15 +57,15 @@
     <div class="popup popup_edit-profile">
       <div class="popup__content">
         <button class="popup__close-btn popup__close-btn_edit-profile">
-          <img src="./images/plus.svg" alt="close-btn" class="popup__close-btn-img">
+          <img src="<%=require('./images/plus.svg')%>" alt="close-btn" class="popup__close-btn-img">
         </button>
         <form class="popup__form popup__form_edit-profile">
           <h2 class="popup__title popup__title_theme_edit-profile">Edit Profile</h2>
           <input id="name-input" type="text" class="popup__input popup__input_edit-profile_name" value=""
-            placeholder="Name" required minlength="2" maxlength="40">
+            placeholder="Name" required minlength="2" maxlength="40" name="name">
           <span id="name-input-error" class="popup__error"></span>
           <input id="job-input" type="text" class="popup__input popup__input_edit-profile_about" value=""
-            placeholder="Proffesion" required minlength="2" maxlength="200">
+            placeholder="Proffesion" required minlength="2" maxlength="200" name="job">
           <span id="job-input-error" class="popup__error"></span>
           <button type="submit" class="popup__save-btn popup__save-btn_edit-profile">Save</button>
         </form>
@@ -74,7 +74,7 @@
     <div class="popup popup_image">
       <figure class="popup__figure">
         <button class="popup__close-btn">
-          <img src="images/plus.svg" alt="close-image" class="popup__close-btn-img">
+          <img src="<%= require('./images/plus.svg')%>" alt="close-image" class="popup__close-btn-img">
         </button>
         <img alt=' ' class="popup__image" src=" ">
         <figcaption class="popup__caption"></figcaption>
@@ -83,7 +83,7 @@
     <template id="place-template">
       <figure class="places__place">
         <button type="button" class="trash-btn">
-          <img src="images/trash.svg" alt="trash" class="trash-img">
+          <img src="<%= require('./images/trash.svg')%>" alt="trash" class="trash-img">
         </button>
         <img alt="" class="places__image">
         <figcaption class="places__caption">
@@ -93,7 +93,6 @@
       </figure>
     </template>
   </div>
-  <script type="module" src="./scripts/app.js"></script>
 </body>
 
 </html>

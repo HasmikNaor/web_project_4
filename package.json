@@ -1,0 +1,36 @@
+{
+  "name": "web_project_4",
+  "version": "1.0.0",
+  "description": "sprint8",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server",
+    "prod": "webpack --config webpack.config.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://HasmikNaor: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@github.com/HasmikNaor/web_project_4.git"
+  },
+  "author": "Hasmik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HasmikNaor/web_project_4/issues"
+  },
+  "homepage": "https://github.com/HasmikNaor/web_project_4#readme",
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.3.0",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.4.2",
+    "webpack": "^5.58.0",
+    "webpack-cli": "^4.9.0",
+    "webpack-dev-server": "^4.3.1"
+  },
+  "dependencies": {
+    "core-js": "^3.18.2"
+  }
+}
