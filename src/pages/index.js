@@ -33,7 +33,6 @@ editBtn.addEventListener('click', () => {
   inputJob.value = data.job;
 
   editProfilePopup.open();
-  editProfileForm.reset();
 
   editFormValidator.toggleButtonState();
 });
@@ -41,7 +40,6 @@ editBtn.addEventListener('click', () => {
 
 addNewPlaceBtn.addEventListener('click', () => {
   addNewPlacePopup.open();
-  addNewPlaceForm.reset();
   addCardFormValidator.toggleButtonState();
 })
 
