@@ -1,6 +1,6 @@
 import "./styles.css";
 import { createCard } from '../utils/utils'
-import { settings, editBtn, addNewPlaceBtn, dataForEditForm, dataForNewPlace, editProfileForm, addNewPlaceForm, inputName, inputJob, editAvatarImg, ProfileImgTemplate } from '../utils/constants';
+import { settings, editBtn, addNewPlaceBtn, dataForEditForm, dataForNewPlace, editProfileForm, addNewPlaceForm, inputName, inputJob, editAvatarImg, ProfileImgTemplate, addNewAvatarForm } from '../utils/constants';
 import FormValidator from "../components/FormValidator";
 import PopupWithImage from "../components/PopupWithImage";
 import PopupWithForm from "../components/PopupWithForm";
@@ -11,6 +11,7 @@ import { api } from "../components/Api"
 
 export const editFormValidator = new FormValidator(settings, editProfileForm);
 export const addCardFormValidator = new FormValidator(settings, addNewPlaceForm);
+export const addNewAvatarValidator = new FormValidator(settings, addNewAvatarForm);
 export const renderInitialCards = new Section({ items: [], renderer: createCard }, '.places')
 export const popupImg = new PopupWithImage('.popup_image');
 const editProfilePopup = new PopupWithForm(dataForEditForm);
@@ -26,6 +27,7 @@ export let ownerId;
 
 editFormValidator.enableValidation();
 addCardFormValidator.enableValidation();
+addNewAvatarValidator.enableValidation();
 popupImg.setEventListeners();
 editProfilePopup.setEventListeners();
 addNewPlacePopup.setEventListeners();

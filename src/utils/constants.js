@@ -13,6 +13,7 @@ export const settings = {
 
 export const editProfileForm = document.querySelector(".popup__form_edit-profile");
 export const addNewPlaceForm = document.querySelector('.popup__form_add-new-place');
+export const addNewAvatarForm = document.querySelector('.popup__form_edit-avatar')
 export const editBtn = document.querySelector(".profile__edit-btn");
 export const editProfile = document.querySelector(".popup_edit-profile");
 export const addNewPlaceBtn = document.querySelector('.profile__add-button');
@@ -21,8 +22,6 @@ export const editProfileInputs = [...editProfile.querySelectorAll('.popup__input
 export const addNewPlaceInputs = [...addNewPlace.querySelectorAll('.popup__input')];
 export const editAvatarImg = document.querySelector('.profile__image-container');
 export const ProfileImgTemplate = document.querySelector('.profile__image');
-// const profileName = document.querySelector(".profile__name");
-// const profileSubtitle = document.querySelector(".profile__subtitle");
 
 export const dataForEditForm = {
   formPopupSelector: '.popup_edit-profile',
