@@ -1,5 +1,7 @@
 import { handleNewPlaceFormSubmit } from './utils';
-import { userInfo } from '../pages/index'
+import { userInfo } from '../pages/index';
+import { api } from '../components/Api';
+
 export const settings = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
@@ -17,14 +19,20 @@ export const addNewPlaceBtn = document.querySelector('.profile__add-button');
 export const addNewPlace = document.querySelector(".popup_add-new-place");
 export const editProfileInputs = [...editProfile.querySelectorAll('.popup__input')];
 export const addNewPlaceInputs = [...addNewPlace.querySelectorAll('.popup__input')];
-const profileName = document.querySelector(".profile__name");
-const profileSubtitle = document.querySelector(".profile__subtitle");
+export const editAvatarImg = document.querySelector('.profile__image-container');
+export const ProfileImgTemplate = document.querySelector('.profile__image');
+// const profileName = document.querySelector(".profile__name");
+// const profileSubtitle = document.querySelector(".profile__subtitle");
 
 export const dataForEditForm = {
   formPopupSelector: '.popup_edit-profile',
 
   handleFormSubmit(values) {
-    userInfo.setUserInfo(values.name, values.job)
+    api.setUserData(values.name, values.job)
+      .then(() => {
+        userInfo.setUserInfo(values.name, values.job);
+        this.close();
+      })
   }
 };
 
