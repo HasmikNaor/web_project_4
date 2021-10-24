@@ -32,6 +32,7 @@ export const dataForEditForm = {
         userInfo.setUserInfo(values.name, values.job);
         this.close();
       })
+      .catch(err => console.log(err))
   }
 };
 
@@ -39,6 +40,18 @@ export const dataForNewPlace = {
   formPopupSelector: '.popup_add-new-place',
   handleFormSubmit: handleNewPlaceFormSubmit
 };
+
+export const dataForEditAvatar = {
+  formPopupSelector: '.popup_type_edit-avatar',
+  handleFormSubmit(inputValue) {
+    api.updateAvatar(inputValue.link).
+      then((res) => {
+        userInfo.setUserAvatar(res)
+        this.close();
+      })
+      .catch(err => console.log(err))
+  }
+}
 
 export const inputName = editProfileForm.querySelector(".popup__input_edit-profile_name");
 export const inputJob = editProfileForm.querySelector(".popup__input_edit-profile_about");

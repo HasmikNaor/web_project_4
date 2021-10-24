@@ -19,7 +19,9 @@ export function createCard(card) {
           then(() => {
             newCard._placeElement.remove();
             newCard._placeElement = null;
+            confirmModal.close();
           })
+          .catch(err => console.log(err))
       })
     },
     () => {
@@ -46,12 +48,14 @@ export function createCard(card) {
             newCard._likes.textContent = res.likes.length;
             likeBtn.classList.toggle('places__btn_active');
           })
+          .catch(err => console.log(err))
       } else {
         api.addLike(card._id)
           .then(res => {
             newCard._likes.textContent = res.likes.length;
             likeBtn.classList.toggle('places__btn_active');
           })
+          .catch(err => console.log(err))
       }
     }
   );
@@ -62,10 +66,11 @@ export function handleNewPlaceFormSubmit(data) {
   const saveBtn = document.querySelector('.popup__save-btn')
   api.createCard(data)
     .then(res => {
-      renderInitialCards._items = [res];
+      renderInitialCards.items = [res];
       renderInitialCards.renderItems();
       this.close();
       saveBtn.textContent = 'Save'
     })
+    .catch(err => console.log(err))
   saveBtn.textContent = 'Save...'
 }
