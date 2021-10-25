@@ -13,9 +13,9 @@ export default class Card {
   }
 
   _addEventListeners() {
-    const deletePlace = this._placeElement.querySelector('.trash-btn');
-    const likeBtn = this._placeElement.querySelector('.places__btn');
-    const placeImg = this._placeElement.querySelector('.places__image');
+    const deletePlace = this.placeElement.querySelector('.trash-btn');
+    const likeBtn = this.placeElement.querySelector('.places__btn');
+    const placeImg = this.placeElement.querySelector('.places__image');
 
     deletePlace.addEventListener('click', () => this._handleDeleteCard());
     placeImg.addEventListener('click', () => {
@@ -26,18 +26,16 @@ export default class Card {
     });
     likeBtn.addEventListener('click', () => {
       this._likesHandler();
-      // likeBtn.classList.toggle('places__btn_active');
-
     });
 
   }
 
   getCardElement = () => {
-    this._placeElement = this._placeTemplate.cloneNode(true);
+    this.placeElement = this._placeTemplate.cloneNode(true);
     this._viewTrashBtn();
     this._likesCounter();
-    const placeImg = this._placeElement.querySelector('.places__image');
-    const placeTitle = this._placeElement.querySelector('.places__title');
+    const placeImg = this.placeElement.querySelector('.places__image');
+    const placeTitle = this.placeElement.querySelector('.places__title');
 
 
     placeImg.alt = this._name;
@@ -46,6 +44,6 @@ export default class Card {
 
     this._addEventListeners();
 
-    return this._placeElement;
+    return this.placeElement;
   }
 }

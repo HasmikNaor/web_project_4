@@ -1,7 +1,3 @@
-import { handleNewPlaceFormSubmit } from './utils';
-import { userInfo } from '../pages/index';
-import { api } from '../components/Api';
-
 export const settings = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
@@ -23,35 +19,6 @@ export const addNewPlaceInputs = [...addNewPlace.querySelectorAll('.popup__input
 export const editAvatarImg = document.querySelector('.profile__image-container');
 export const ProfileImgTemplate = document.querySelector('.profile__image');
 
-export const dataForEditForm = {
-  formPopupSelector: '.popup_edit-profile',
-
-  handleFormSubmit(values) {
-    api.setUserData(values.name, values.job)
-      .then(() => {
-        userInfo.setUserInfo(values.name, values.job);
-        this.close();
-      })
-      .catch(err => console.log(err))
-  }
-};
-
-export const dataForNewPlace = {
-  formPopupSelector: '.popup_add-new-place',
-  handleFormSubmit: handleNewPlaceFormSubmit
-};
-
-export const dataForEditAvatar = {
-  formPopupSelector: '.popup_type_edit-avatar',
-  handleFormSubmit(inputValue) {
-    api.updateAvatar(inputValue.link).
-      then((res) => {
-        userInfo.setUserAvatar(res)
-        this.close();
-      })
-      .catch(err => console.log(err))
-  }
-}
 
 export const inputName = editProfileForm.querySelector(".popup__input_edit-profile_name");
 export const inputJob = editProfileForm.querySelector(".popup__input_edit-profile_about");
